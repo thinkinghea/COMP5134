@@ -25,7 +25,7 @@ import com.pos.icecream.core.IceCreamController;
 import com.pos.icecream.model.AIceCream;
 
 public class IceCreamPanel extends JFrame implements Observer{
-	private static final String TAG = IceCreamPanel.class.getName();
+	private static final String TAG = IceCreamPanel.class.getSimpleName();
 	private JPanel decoBtnPnl,flavorBtnPnl;
 	private JLabel lbPrice,lbDesc;
 	private IceCreamController creator;
