@@ -130,12 +130,16 @@ public class IceCreamPanel extends JFrame implements Observer{
 		headerPnl.add(headerLeft);
 		
 		JLabel lbFavour = new JLabel("ICE-CREAM Flavor");
+		Font newFont = lbFavour.getFont().deriveFont(64).deriveFont(Font.BOLD);
+		lbFavour.setFont(newFont);
 		headerLeft.add(lbFavour);
 		
 		JPanel headerRight = new JPanel();
 		headerPnl.add(headerRight);
 		
 		JLabel lbDeco = new JLabel("Decorator");
+		newFont = lbFavour.getFont().deriveFont(64).deriveFont(Font.BOLD);
+		lbDeco.setFont(newFont);
 		headerRight.add(lbDeco);
 		
 		JPanel resultMainPnl = new JPanel();
@@ -155,7 +159,7 @@ public class IceCreamPanel extends JFrame implements Observer{
 		resultPnl.add(resultPnlLeft);
 		
 		JLabel lbDesc1 = new JLabel("Description: ");
-		Font newFont = lbDesc1.getFont().deriveFont(64).deriveFont(Font.BOLD);
+		newFont = lbDesc1.getFont().deriveFont(64).deriveFont(Font.BOLD);
 		lbDesc1.setFont(newFont);
 		resultPnlLeft.add(lbDesc1);
 		
