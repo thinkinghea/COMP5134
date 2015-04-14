@@ -136,7 +136,7 @@ public class IceCreamPanel extends JFrame implements Observer {
 		headerPnl.add(headerRight);
 
 		JLabel lbDeco = new JLabel("Decorator");
-		newFont = lbFavour.getFont().deriveFont(32).deriveFont(Font.BOLD);
+		newFont = lbFavour.getFont().deriveFont(64).deriveFont(Font.BOLD);
 		lbDeco.setFont(newFont);
 		headerRight.add(lbDeco);
 
