@@ -16,3 +16,4 @@ COMP5134 project is a project for ICE POS system.
 6) sharing the project to GITHUB.
 
 
+<img src="https://github.com/thinkinghea/COMP5134/blob/master/COMP5134/res/cover.png" alt="Demo View" style="width:304px;height:228px">
