@@ -215,7 +215,7 @@ public class IceCreamPanel extends JFrame implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println(TAG + "|" + arg);
+//		System.out.println(TAG + "|" + arg);
 		if (arg instanceof AIceCream) {
 			AIceCream cream = (AIceCream) arg;
 			fnUpdateStatus(cream.getDescription(), "$" + cream.getTotalPrice());
