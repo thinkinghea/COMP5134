@@ -24,12 +24,12 @@ import javax.swing.border.TitledBorder;
 import com.pos.icecream.core.IceCreamController;
 import com.pos.icecream.model.AIceCream;
 
-public class IceCreamPanel extends JFrame implements Observer{
+public class IceCreamPanel extends JFrame implements Observer {
 	private static final String TAG = IceCreamPanel.class.getSimpleName();
-	private JPanel decoBtnPnl,flavorBtnPnl;
-	private JLabel lbPrice,lbDesc;
+	private JPanel decoBtnPnl, flavorBtnPnl;
+	private JLabel lbPrice, lbDesc;
 	private IceCreamController creator;
-	
+
 	private static void fnSetTheme() {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -37,29 +37,29 @@ public class IceCreamPanel extends JFrame implements Observer{
 			e.printStackTrace();
 		}
 	}
-	
+
 	public IceCreamPanel(IceCreamController creator) {
 		this.creator = creator;
 		creator.addObserver(this);
-		
+
 		fnSetTheme();
-		
+
 		this.setTitle("Point-of-Sale for Ice-cream shop");
 		this.setSize(800, 600);
-		
+
 		this.setAlwaysOnTop(true);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JPanel toobarPnl = new JPanel();
 		getContentPane().add(toobarPnl, BorderLayout.NORTH);
 		toobarPnl.setLayout(new BoxLayout(toobarPnl, BoxLayout.X_AXIS));
-		
+
 		JPanel toobarPnlLeft = new JPanel();
 		FlowLayout flowLayout_1 = (FlowLayout) toobarPnlLeft.getLayout();
 		flowLayout_1.setAlignment(FlowLayout.LEFT);
 		toobarPnl.add(toobarPnlLeft);
-		
+
 		JButton btnSystemAdministrator = new JButton("System Administrator");
 		btnSystemAdministrator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -68,12 +68,12 @@ public class IceCreamPanel extends JFrame implements Observer{
 
 		});
 		toobarPnlLeft.add(btnSystemAdministrator);
-		
+
 		JPanel toobarPnlRight = new JPanel();
 		FlowLayout flowLayout_2 = (FlowLayout) toobarPnlRight.getLayout();
 		flowLayout_2.setAlignment(FlowLayout.RIGHT);
 		toobarPnl.add(toobarPnlRight);
-		
+
 		JButton btnNewIceCream = new JButton("New IceCream");
 		btnNewIceCream.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -81,24 +81,26 @@ public class IceCreamPanel extends JFrame implements Observer{
 			}
 		});
 		toobarPnlRight.add(btnNewIceCream);
-		
+
 		JPanel centerPnl = new JPanel();
 		getContentPane().add(centerPnl, BorderLayout.CENTER);
 		centerPnl.setLayout(new BorderLayout(0, 0));
-		
+
 		JPanel icecreamMainPnl = new JPanel();
-		icecreamMainPnl.setBorder(new TitledBorder(null, "Please select one flavor and any decorator", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		icecreamMainPnl.setBorder(new TitledBorder(null,
+				"Please select one flavor and any decorator",
+				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		centerPnl.add(icecreamMainPnl, BorderLayout.CENTER);
 		icecreamMainPnl.setLayout(new BorderLayout(0, 0));
-		
-		
+
 		JPanel icecreamBtnPnl = new JPanel();
 		icecreamMainPnl.add(icecreamBtnPnl, BorderLayout.CENTER);
-		icecreamBtnPnl.setLayout(new BoxLayout(icecreamBtnPnl, BoxLayout.X_AXIS));
-		
+		icecreamBtnPnl
+				.setLayout(new BoxLayout(icecreamBtnPnl, BoxLayout.X_AXIS));
+
 		/*
 		 * Flavor
-		 * */
+		 */
 		flavorBtnPnl = new JPanel();
 		JScrollPane scrollPane_flavor = new JScrollPane();
 		icecreamBtnPnl.add(scrollPane_flavor);
@@ -107,80 +109,75 @@ public class IceCreamPanel extends JFrame implements Observer{
 
 		/*
 		 * DECO
-		 * */
+		 */
 		decoBtnPnl = new JPanel();
 		decoBtnPnl.setLayout(new BoxLayout(decoBtnPnl, BoxLayout.Y_AXIS));
 		JScrollPane scrollPane_deco = new JScrollPane();
 		icecreamBtnPnl.add(scrollPane_deco);
 		scrollPane_deco.setViewportView(decoBtnPnl);
-		
-
-		
-		
 
 		/*
 		 * Status Panel
-		 * */
-		
+		 */
+
 		JPanel headerPnl = new JPanel();
 		icecreamMainPnl.add(headerPnl, BorderLayout.NORTH);
 		headerPnl.setLayout(new BoxLayout(headerPnl, BoxLayout.X_AXIS));
-		
+
 		JPanel headerLeft = new JPanel();
 		headerPnl.add(headerLeft);
-		
+
 		JLabel lbFavour = new JLabel("ICE-CREAM Flavor");
 		Font newFont = lbFavour.getFont().deriveFont(64).deriveFont(Font.BOLD);
 		lbFavour.setFont(newFont);
 		headerLeft.add(lbFavour);
-		
+
 		JPanel headerRight = new JPanel();
 		headerPnl.add(headerRight);
-		
+
 		JLabel lbDeco = new JLabel("Decorator");
 		newFont = lbFavour.getFont().deriveFont(32).deriveFont(Font.BOLD);
 		lbDeco.setFont(newFont);
 		headerRight.add(lbDeco);
-		
+
 		JPanel resultMainPnl = new JPanel();
 		centerPnl.add(resultMainPnl, BorderLayout.NORTH);
 		resultMainPnl.setLayout(new BorderLayout(0, 0));
-		
+
 		JSeparator sep1 = new JSeparator();
 		resultMainPnl.add(sep1, BorderLayout.NORTH);
 		JPanel resultPnl = new JPanel();
 		resultMainPnl.add(resultPnl, BorderLayout.CENTER);
 		resultPnl.setBorder(new CompoundBorder());
 		resultPnl.setLayout(new BoxLayout(resultPnl, BoxLayout.X_AXIS));
-		
+
 		JPanel resultPnlLeft = new JPanel();
 		FlowLayout flowLayout_r1 = (FlowLayout) resultPnlLeft.getLayout();
 		flowLayout_r1.setAlignment(FlowLayout.LEFT);
 		resultPnl.add(resultPnlLeft);
-		
+
 		JLabel lbDesc1 = new JLabel("Description: ");
 		newFont = lbDesc1.getFont().deriveFont(64).deriveFont(Font.BOLD);
 		lbDesc1.setFont(newFont);
 		resultPnlLeft.add(lbDesc1);
-		
+
 		lbDesc = new JLabel("");
 		lbDesc.setFont(newFont);
 		resultPnlLeft.add(lbDesc);
-		
 
 		JPanel resultPnlRight = new JPanel();
 		resultPnl.add(resultPnlRight);
 		FlowLayout fl_resultPnlRight = (FlowLayout) resultPnlRight.getLayout();
 		fl_resultPnlRight.setAlignment(FlowLayout.RIGHT);
-		
+
 		JLabel lbTotal = new JLabel("Total: ");
 		lbTotal.setFont(newFont);
 		resultPnlRight.add(lbTotal);
-		
+
 		lbPrice = new JLabel("");
 		lbPrice.setFont(newFont);
 		resultPnlRight.add(lbPrice);
-		
+
 		JSeparator sep2 = new JSeparator();
 		resultMainPnl.add(sep2, BorderLayout.SOUTH);
 	}
@@ -190,8 +187,8 @@ public class IceCreamPanel extends JFrame implements Observer{
 		lbPrice.setText("");
 		lbDesc.setText("");
 	}
-	
-	private void fnUpdateStatus(String name,String price) {
+
+	private void fnUpdateStatus(String name, String price) {
 		lbDesc.setText(name);
 		lbPrice.setText(price);
 	}
@@ -207,39 +204,38 @@ public class IceCreamPanel extends JFrame implements Observer{
 			}
 		});
 	}
-	
-	public IceCreamController getCreator(){
+
+	public IceCreamController getCreator() {
 		return this.creator;
 	}
-	
+
 	public void allow(boolean a) {
 		this.setEnabled(a);
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		System.out.println(TAG+"|"+arg);
-		if(arg instanceof AIceCream){
-			AIceCream cream = (AIceCream)arg;
-			fnUpdateStatus(cream.getDescription(),"$"+cream.getTotalPrice());
+		System.out.println(TAG + "|" + arg);
+		if (arg instanceof AIceCream) {
+			AIceCream cream = (AIceCream) arg;
+			fnUpdateStatus(cream.getDescription(), "$" + cream.getTotalPrice());
 		}
 	}
-	
-	public void addIceCreamFlavor(IceCreamButton btn){
+
+	public void addIceCreamFlavor(IceCreamButton btn) {
 		flavorBtnPnl.add(btn);
 		flavorBtnPnl.doLayout();
 
 		validate();
 		repaint();
 	}
-	
-	public void addIceCreamDecorator(IceCreamButton btn){
+
+	public void addIceCreamDecorator(IceCreamButton btn) {
 		decoBtnPnl.add(btn);
 		decoBtnPnl.doLayout();
 
 		validate();
 		repaint();
 	}
-	
+
 }

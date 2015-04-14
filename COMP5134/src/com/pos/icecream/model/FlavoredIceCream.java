@@ -16,7 +16,6 @@ public class FlavoredIceCream extends AIceCream {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return this.description;
 	}
 
