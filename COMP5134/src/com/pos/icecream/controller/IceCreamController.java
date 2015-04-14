@@ -1,4 +1,4 @@
-package com.pos.icecream.core;
+package com.pos.icecream.controller;
 
 import java.util.Observable;
 import java.util.Vector;

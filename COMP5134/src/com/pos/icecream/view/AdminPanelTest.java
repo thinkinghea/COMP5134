@@ -1,4 +1,4 @@
-package com.pos.icecream.ui;
+package com.pos.icecream.view;
 
 import junit.framework.TestCase;
 

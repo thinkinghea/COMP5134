@@ -1,11 +1,11 @@
-package com.pos.icecream.ui;
+package com.pos.icecream.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import com.pos.icecream.core.IceCreamController;
+import com.pos.icecream.controller.IceCreamController;
 import com.pos.icecream.model.FlavoredIceCream;
 import com.pos.icecream.model.IceCreamDecorator;
 

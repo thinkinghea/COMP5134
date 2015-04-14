@@ -1,4 +1,4 @@
-package com.pos.icecream.ui;
+package com.pos.icecream.view;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -21,7 +21,7 @@ import javax.swing.UIManager;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 
-import com.pos.icecream.core.IceCreamController;
+import com.pos.icecream.controller.IceCreamController;
 import com.pos.icecream.model.AIceCream;
 
 public class IceCreamPanel extends JFrame implements Observer {
